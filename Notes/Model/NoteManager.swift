@@ -34,13 +34,13 @@ class NoteManager{
         return notes
     }
     
-    func getFilePath() -> URL{
+    func getFilePath() -> String{
         let fileManager = FileManager.default
         let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
         
         let noteUrlPath = documentDirectory.appendingPathComponent("notes.json")
         
-        return URL(string: noteUrlPath.absoluteString)!
+        return URL(string: noteUrlPath.absoluteString)!.path
     }
     
     func loadNotes(){
@@ -48,10 +48,10 @@ class NoteManager{
         
         let fileManager = FileManager.default
         
-        if(fileManager.fileExists(atPath: notesPath.path)){
+        if(fileManager.fileExists(atPath: notesPath)){
             
             do{
-                let jsonData = fileManager.contents(atPath: notesPath.path)
+                let jsonData = fileManager.contents(atPath: notesPath)
                 
                 notes = try JSONDecoder().decode([Note].self, from: jsonData!)
                 
@@ -70,7 +70,7 @@ class NoteManager{
         
         do{
             let jsonData = try JSONEncoder().encode(notes)
-            fileManager.createFile(atPath: getFilePath().path, contents: jsonData)
+            fileManager.createFile(atPath: getFilePath(), contents: jsonData)
             
         }catch let error{
             print(error)
