@@ -100,7 +100,10 @@ class NotesTableViewController: UITableViewController {
     */
     
     @IBAction func unwindToNotesTable(segue: UIStoryboardSegue){
-        print("Unwind to notes table")
+        let source = segue.source as! AddNoteViewController
+        note = source.newNote
+        
+        noteManager.createNote(note: note!)
     }
 
 }

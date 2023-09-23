@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C29A66C72ABF42D700AF9B63 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29A66C62ABF42D700AF9B63 /* AddNoteViewController.swift */; };
+		C29A66CC2ABF503400AF9B63 /* HiddingKeyboardExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29A66CB2ABF503400AF9B63 /* HiddingKeyboardExt.swift */; };
 		C2A0D7D42ABE7F4C003DB9A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A0D7D32ABE7F4C003DB9A0 /* AppDelegate.swift */; };
 		C2A0D7D62ABE7F4C003DB9A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A0D7D52ABE7F4C003DB9A0 /* SceneDelegate.swift */; };
 		C2A0D7DB2ABE7F4C003DB9A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A0D7D92ABE7F4C003DB9A0 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		C29A66C62ABF42D700AF9B63 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		C29A66CB2ABF503400AF9B63 /* HiddingKeyboardExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddingKeyboardExt.swift; sourceTree = "<group>"; };
 		C2A0D7D02ABE7F4C003DB9A0 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A0D7D32ABE7F4C003DB9A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2A0D7D52ABE7F4C003DB9A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		C29A66CA2ABF4D7900AF9B63 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C29A66CB2ABF503400AF9B63 /* HiddingKeyboardExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C2A0D7C72ABE7F4C003DB9A0 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 		C2A0D7D22ABE7F4C003DB9A0 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				C29A66CA2ABF4D7900AF9B63 /* Extensions */,
 				C29A66C92ABF42FD00AF9B63 /* Util */,
 				C29A66C82ABF42E300AF9B63 /* Controllers */,
 				C2A0D7E72ABE8056003DB9A0 /* Model */,
@@ -178,6 +189,7 @@
 				C2A0D7EB2ABE8244003DB9A0 /* NoteManager.swift in Sources */,
 				C2A0D7EF2ABE87A3003DB9A0 /* AppConstants.swift in Sources */,
 				C2A0D7D42ABE7F4C003DB9A0 /* AppDelegate.swift in Sources */,
+				C29A66CC2ABF503400AF9B63 /* HiddingKeyboardExt.swift in Sources */,
 				C2A0D7D62ABE7F4C003DB9A0 /* SceneDelegate.swift in Sources */,
 				C2A0D7E92ABE80BA003DB9A0 /* Note.swift in Sources */,
 				C2A0D7ED2ABE8761003DB9A0 /* NotesTableViewController.swift in Sources */,
