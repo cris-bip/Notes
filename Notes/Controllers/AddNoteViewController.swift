@@ -13,11 +13,13 @@ class AddNoteViewController: UIViewController {
     
     @IBOutlet var noteContent: UITextView!
     
-    var newNote: Note!
+    var newNote: Note?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        noteTitle.text = ""
+        noteContent.text = ""
         // Do any additional setup after loading the view.
     }
     
@@ -27,9 +29,14 @@ class AddNoteViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //newNote = Note(title: <#T##String#>, content: <#T##String#>, date: <#T##String#>)
+        newNote = Note(title: noteTitle.text, content: noteContent.text, date: Date())
         
-        
+        let destination = segue.destination as! NotesTableViewController
+        destination.note = newNote
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        return !noteTitle.text.isEmpty && !noteContent.text.isEmpty
     }
     
 }

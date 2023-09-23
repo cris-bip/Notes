@@ -8,6 +8,8 @@
 import UIKit
 
 class NotesTableViewController: UITableViewController {
+    
+    var note: Note?
 
     @IBOutlet var emptyNoteView: UIView!
     
