@@ -17,15 +17,16 @@ class NotesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         if(noteManager.countNotes() == AppConstants.EMPTY_NOTES){
             emptyNoteView.isHidden = false
             self.tableView.backgroundView = emptyNoteView
         }else{
             emptyNoteView.isHidden = true
         }
-    
-
     }
 
     // MARK: - Table view data source
@@ -42,10 +43,12 @@ class NotesTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AppConstants.REUSE_CELL_ID, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: AppConstants.REUSE_CELL_ID, for: indexPath) as UITableViewCell
 
+        let note = noteManager.getNote(at: indexPath.row)
         
-
+        cell.textLabel!.text = note.title
+        cell.detailTextLabel!.text = note.date.formatted()
         return cell
     }
     
@@ -104,6 +107,9 @@ class NotesTableViewController: UITableViewController {
         note = source.newNote
         
         noteManager.createNote(note: note!)
+        
+        noteManager.saveNotes()
+        tableView.reloadData()
     }
 
 }

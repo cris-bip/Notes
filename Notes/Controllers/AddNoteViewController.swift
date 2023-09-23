@@ -18,9 +18,18 @@ class AddNoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupTextViews()
+    }
+    
+    func setupTextViews(){
         noteTitle.text = ""
         noteContent.text = ""
-        // Do any additional setup after loading the view.
+        
+        noteTitle.layer.borderWidth = AppConstants.BORDER_WITH
+        noteTitle.layer.borderColor = UIColor.white.cgColor
+        
+        noteContent.layer.borderWidth = AppConstants.BORDER_WITH
+        noteContent.layer.borderColor = UIColor.white.cgColor
     }
     
     

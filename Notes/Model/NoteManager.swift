@@ -35,7 +35,18 @@ class NoteManager{
     }
     
     func saveNotes(){
-        // TODO: Save notes to filesystem
+        let fileManager = FileManager.default
+        let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        
+        let noteUrlPath = documentDirectory.appendingPathComponent("notes.json")
+        
+        do{
+            let jsonData = try JSONEncoder().encode(notes)
+            fileManager.createFile(atPath: noteUrlPath.absoluteString, contents: jsonData)
+            
+        }catch let error{
+            print(error)
+        }
     }
     
     func updateNotes(note: Note, at index: Int){
