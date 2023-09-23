@@ -10,5 +10,5 @@ import Foundation
 struct Note: Encodable, Decodable {
     var title: String
     var content: String
-    var date: String
+    var date: Date
 }

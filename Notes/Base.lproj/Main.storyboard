@@ -113,34 +113,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwb-9c-SL6">
-                                <rect key="frame" x="10" y="66" width="373" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="yFq-GQ-FnO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MQH-Bh-V9U">
-                                <rect key="frame" x="10" y="144" width="373" height="605"/>
+                                <rect key="frame" x="10" y="270" width="373" height="479"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwb-9c-SL6">
+                                <rect key="frame" x="10" y="66" width="373" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="yFq-GQ-FnO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ha1-bd-dEW">
+                                <rect key="frame" x="10" y="122" width="373" height="62"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="Bb8-GF-yqW"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contenido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDT-MS-rrs">
+                                <rect key="frame" x="10" y="192" width="373" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Iuv-06-c0m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MJh-Ab-W2C"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
                             <constraint firstItem="iwb-9c-SL6" firstAttribute="top" secondItem="MJh-Ab-W2C" secondAttribute="top" constant="10" id="18O-Aw-e3W"/>
-                            <constraint firstItem="MQH-Bh-V9U" firstAttribute="top" secondItem="iwb-9c-SL6" secondAttribute="bottom" constant="8" symbolic="YES" id="85v-9m-qM1"/>
+                            <constraint firstItem="Ha1-bd-dEW" firstAttribute="top" secondItem="iwb-9c-SL6" secondAttribute="bottom" constant="8" symbolic="YES" id="4ds-MC-3Qb"/>
                             <constraint firstItem="MQH-Bh-V9U" firstAttribute="leading" secondItem="MJh-Ab-W2C" secondAttribute="leading" constant="10" id="A6q-pM-Qac"/>
                             <constraint firstItem="iwb-9c-SL6" firstAttribute="leading" secondItem="MJh-Ab-W2C" secondAttribute="leading" constant="10" id="Dbq-pY-I8Q"/>
                             <constraint firstItem="MJh-Ab-W2C" firstAttribute="bottom" secondItem="MQH-Bh-V9U" secondAttribute="bottom" constant="34" id="Qv3-LQ-67P"/>
+                            <constraint firstItem="YDT-MS-rrs" firstAttribute="top" secondItem="Ha1-bd-dEW" secondAttribute="bottom" constant="8" symbolic="YES" id="SjR-WT-7ZY"/>
                             <constraint firstItem="MJh-Ab-W2C" firstAttribute="trailing" secondItem="MQH-Bh-V9U" secondAttribute="trailing" constant="10" id="ZCh-dB-iw7"/>
+                            <constraint firstItem="MJh-Ab-W2C" firstAttribute="trailing" secondItem="YDT-MS-rrs" secondAttribute="trailing" constant="10" id="cWR-r3-LFX"/>
+                            <constraint firstItem="YDT-MS-rrs" firstAttribute="leading" secondItem="MJh-Ab-W2C" secondAttribute="leading" constant="10" id="eXR-7p-sn1"/>
                             <constraint firstItem="MJh-Ab-W2C" firstAttribute="trailing" secondItem="iwb-9c-SL6" secondAttribute="trailing" constant="10" id="ekl-6J-2wd"/>
+                            <constraint firstItem="MJh-Ab-W2C" firstAttribute="trailing" secondItem="Ha1-bd-dEW" secondAttribute="trailing" constant="10" id="gAJ-nR-YKY"/>
+                            <constraint firstItem="Ha1-bd-dEW" firstAttribute="leading" secondItem="MJh-Ab-W2C" secondAttribute="leading" constant="10" id="rXi-Ff-wC8"/>
+                            <constraint firstItem="MQH-Bh-V9U" firstAttribute="top" secondItem="YDT-MS-rrs" secondAttribute="bottom" constant="8" symbolic="YES" id="vjn-aY-oiB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ePh-AE-PjC">
@@ -159,7 +185,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="noteContent" destination="MQH-Bh-V9U" id="sq8-rA-eMx"/>
-                        <outlet property="titleLabel" destination="iwb-9c-SL6" id="za4-E9-Oe1"/>
+                        <outlet property="noteTitle" destination="Ha1-bd-dEW" id="E7u-gP-5eF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOz-ig-kfI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,12 +8,12 @@
 import UIKit
 
 class AddNoteViewController: UIViewController {
-
-    @IBOutlet var titleLabel: UILabel!
+    
+    @IBOutlet var noteTitle: UITextView!
     
     @IBOutlet var noteContent: UITextView!
     
-    var note: Note!
+    var newNote: Note!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class AddNoteViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        //newNote = Note(title: <#T##String#>, content: <#T##String#>, date: <#T##String#>)
         
         
     }
