@@ -111,6 +111,8 @@ class NotesTableViewController: UITableViewController {
         updateBackgroundView()
         
         noteManager.saveNotes()
+        
+        noteManager.loadNotes()
         tableView.reloadData()
     }
 

@@ -10,6 +10,10 @@ import Foundation
 class NoteManager{
     private var notes: [Note] = []
     
+    init() {
+        loadNotes()
+    }
+    
     func createNote(note: Note){
         notes.append(note)
     }
@@ -30,19 +34,43 @@ class NoteManager{
         return notes
     }
     
-    func loadNotes(){
-        // TODO: Load notes from filesystem
-    }
-    
-    func saveNotes(){
+    func getFilePath() -> URL{
         let fileManager = FileManager.default
         let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
         
         let noteUrlPath = documentDirectory.appendingPathComponent("notes.json")
         
+        return URL(string: noteUrlPath.absoluteString)!
+    }
+    
+    func loadNotes(){
+        let notesPath = getFilePath()
+        
+        let fileManager = FileManager.default
+        
+        if(fileManager.fileExists(atPath: notesPath.path)){
+            
+            do{
+                let jsonData = fileManager.contents(atPath: notesPath.path)
+                
+                notes = try JSONDecoder().decode([Note].self, from: jsonData!)
+                
+            }catch let error{
+                print(error)
+            }
+        }else{
+            // File doesn't exist
+        }
+        
+        
+    }
+    
+    func saveNotes(){
+        let fileManager = FileManager.default
+        
         do{
             let jsonData = try JSONEncoder().encode(notes)
-            fileManager.createFile(atPath: noteUrlPath.absoluteString, contents: jsonData)
+            fileManager.createFile(atPath: getFilePath().path, contents: jsonData)
             
         }catch let error{
             print(error)
