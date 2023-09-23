@@ -18,9 +18,10 @@ class NotesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateBackgroundView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    func updateBackgroundView(){
         if(noteManager.countNotes() == AppConstants.EMPTY_NOTES){
             emptyNoteView.isHidden = false
             self.tableView.backgroundView = emptyNoteView
@@ -107,6 +108,7 @@ class NotesTableViewController: UITableViewController {
         note = source.newNote
         
         noteManager.createNote(note: note!)
+        updateBackgroundView()
         
         noteManager.saveNotes()
         tableView.reloadData()
