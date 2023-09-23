@@ -9,26 +9,33 @@ import UIKit
 
 class NotesTableViewController: UITableViewController {
 
+    @IBOutlet var emptyNoteView: UIView!
+    
+    let noteManager = NoteManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if(noteManager.countNotes() == AppConstants.EMPTY_NOTES){
+            emptyNoteView.isHidden = false
+            self.tableView.backgroundView = emptyNoteView
+        }else{
+            emptyNoteView.isHidden = true
+        }
+    
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return AppConstants.UNIQUE_SECTION
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return noteManager.countNotes()
     }
 
     
@@ -89,5 +96,9 @@ class NotesTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func unwindToNotesTable(segue: UIStoryboardSegue){
+        print("Unwind to notes table")
+    }
 
 }
