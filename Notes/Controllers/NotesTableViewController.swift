@@ -80,8 +80,11 @@ class NotesTableViewController: UITableViewController {
         let noteNav = segue.destination as! UINavigationController
         let noteController = noteNav.viewControllers.first as! AddNoteViewController
                 
-        // TODO: Error al agregar nota, validar tipo de sender
-        noteController.newNote = (sender as! Note)
+        if let note = sender as? Note{
+            noteController.newNote = note
+        }else{
+            // Nota nueva
+        }
     }
     
     
