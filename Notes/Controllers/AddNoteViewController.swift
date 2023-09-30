@@ -58,7 +58,18 @@ class AddNoteViewController: UIViewController, UITextViewDelegate {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        return !noteTitle.text.isEmpty && !noteContent.text.isEmpty
+        let isValidNote = !noteTitle.text.isEmpty && !noteContent.text.isEmpty
+        if(!isValidNote){
+            let alert = UIAlertController(title: "Datos incompletos", message: "Se debe agregar un título y el contenido de la nota", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            // Sin acción
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        
+        return isValidNote
     }
     
     
