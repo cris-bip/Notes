@@ -11,8 +11,7 @@ struct AppConstants {
     static let UNIQUE_SECTION = 1
     static let EMPTY_NOTES = 0
         
-    static let ADD_NOTE_SEGUE_ID = "addTaskSegue"
-    static let SHOW_NOTE_SEGUE_ID = "showDetailSegue"
+    static let ADD_NOTE_SEGUE_ID = "addNoteSegue"
     
     static let BORDER_WITH = 1.0
 }

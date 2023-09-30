@@ -59,9 +59,7 @@ class NotesTableViewController: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedNote = noteManager.getNote(at: indexPath.row)
-        
-        performSegue(withIdentifier: AppConstants.SHOW_NOTE_SEGUE_ID, sender: selectedNote)
+        performSegue(withIdentifier: AppConstants.ADD_NOTE_SEGUE_ID, sender: noteManager.getNote(at: indexPath.row))
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -78,12 +76,12 @@ class NotesTableViewController: UITableViewController {
     
     // MARK: - Navigation
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if(segue.identifier == AppConstants.SHOW_NOTE_SEGUE_ID){
-            // TODO: Set note to detail view.
-        }
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {                
+        let noteNav = segue.destination as! UINavigationController
+        let noteController = noteNav.viewControllers.first as! AddNoteViewController
+                
+        // TODO: Error al agregar nota, validar tipo de sender
+        noteController.newNote = (sender as! Note)
     }
     
     

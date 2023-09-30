@@ -22,6 +22,10 @@ class NoteManager{
         notes.remove(at: index)
     }
     
+    func updateNote(note: Note, at index: Int){
+        notes.replaceSubrange(index...index, with: [note])
+    }
+    
     func countNotes() -> Int{
         return notes.count
     }
@@ -75,10 +79,5 @@ class NoteManager{
         }catch let error{
             print(error)
         }
-    }
-    
-    func updateNotes(note: Note, at index: Int){
-        // TODO: Update a note in the specified index
-        
     }
 }

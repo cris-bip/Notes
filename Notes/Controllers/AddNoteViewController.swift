@@ -19,6 +19,11 @@ class AddNoteViewController: UIViewController {
         super.viewDidLoad()
 
         setupTextViews()
+        
+        if(newNote != nil){
+            noteTitle.text = newNote?.title
+            noteContent.text = newNote?.content            
+        }
     }
     
     func setupTextViews(){
