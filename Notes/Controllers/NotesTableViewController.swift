@@ -10,6 +10,8 @@ import UIKit
 class NotesTableViewController: UITableViewController {
     
     var note: Note?
+    var hasChanges = false
+    var isNewNote = false
 
     @IBOutlet var emptyNoteView: UIView!
     
@@ -68,6 +70,10 @@ class NotesTableViewController: UITableViewController {
             noteManager.deleteNote(at: indexPath.row)
             
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            if(noteManager.countNotes() == 0){
+                updateBackgroundView()
+            }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
@@ -83,21 +89,22 @@ class NotesTableViewController: UITableViewController {
         if let note = sender as? Note{
             noteController.newNote = note
         }else{
-            // Nota nueva
+            isNewNote = true
+            noteController.isNewNote = isNewNote
         }
     }
     
     
     @IBAction func unwindToNotesTable(segue: UIStoryboardSegue){
-        let source = segue.source as! AddNoteViewController
-        note = source.newNote
         
-        noteManager.createNote(note: note!)
+        if(isNewNote){
+            noteManager.createNote(note: note!)
+        }else if(hasChanges){
+            noteManager.updateNote(note: note!, at: tableView.indexPathForSelectedRow!.row)
+        }
+                
         updateBackgroundView()
-        
-        noteManager.saveNotes()
-        
-        noteManager.loadNotes()
+                
         tableView.reloadData()
     }
 

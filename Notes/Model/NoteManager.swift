@@ -14,16 +14,28 @@ class NoteManager{
         loadNotes()
     }
     
+    func commitChange(){
+        saveNotes()
+        
+        loadNotes()
+    }
+    
     func createNote(note: Note){
         notes.append(note)
+        
+        commitChange()
     }
     
     func deleteNote(at index: Int){
         notes.remove(at: index)
+        
+        commitChange()
     }
     
     func updateNote(note: Note, at index: Int){
         notes.replaceSubrange(index...index, with: [note])
+        
+        commitChange()
     }
     
     func countNotes() -> Int{

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddNoteViewController: UIViewController {
+class AddNoteViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet var noteTitle: UITextView!
     
@@ -15,10 +15,16 @@ class AddNoteViewController: UIViewController {
     
     var newNote: Note?
     
+    var isNewNote = false
+    var hasChanged = false    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTextViews()
+        
+        noteTitle.delegate = self
+        noteContent.delegate = self
         
         if(newNote != nil){
             noteTitle.text = newNote?.title
@@ -47,10 +53,16 @@ class AddNoteViewController: UIViewController {
         
         let destination = segue.destination as! NotesTableViewController
         destination.note = newNote
+        destination.isNewNote = isNewNote
+        destination.hasChanges = hasChanged
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         return !noteTitle.text.isEmpty && !noteContent.text.isEmpty
     }
     
+    
+    func textViewDidChange(_ textView: UITextView) {
+        hasChanged = true
+    }
 }
